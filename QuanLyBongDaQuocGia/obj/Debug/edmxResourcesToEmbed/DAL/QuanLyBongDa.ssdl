@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLGVDBDQGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BANGXEPHANG">
+    <Key>
+      <PropertyRef Name="MaXH" />
+    </Key>
+    <Property Name="MaXH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaDB" Type="varchar" MaxLength="10" />
+    <Property Name="Thang" Type="int" />
+    <Property Name="Hoa" Type="int" />
+    <Property Name="Thua" Type="int" />
+    <Property Name="HieuSo" Type="int" />
+    <Property Name="Diem" Type="int" />
+  </EntityType>
+  <EntityType Name="CAUTHU">
+    <Key>
+      <PropertyRef Name="MaCT" />
+    </Key>
+    <Property Name="MaCT" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenCT" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgaySinh" Type="smalldatetime" />
+    <Property Name="MaLoaiCT" Type="varchar" MaxLength="10" />
+    <Property Name="GhiChu" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaDB" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="CHITIETKETQUA">
+    <Key>
+      <PropertyRef Name="MaCTKQ" />
+    </Key>
+    <Property Name="MaCTKQ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaCT" Type="varchar" MaxLength="10" />
+    <Property Name="MaDB" Type="varchar" MaxLength="10" />
+    <Property Name="LoaiBT" Type="varchar" MaxLength="1" />
+    <Property Name="ThoiDiem" Type="int" />
+    <Property Name="MaKQ" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="DANHSACHCAUTHUGHIBAN">
+    <Key>
+      <PropertyRef Name="MaDSCTGB" />
+    </Key>
+    <Property Name="MaDSCTGB" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaCT" Type="varchar" MaxLength="10" />
+    <Property Name="MaDB" Type="varchar" MaxLength="10" />
+    <Property Name="MaLoaiCT" Type="varchar" MaxLength="10" />
+    <Property Name="SoBT" Type="int" />
+  </EntityType>
+  <EntityType Name="DOIBONG">
+    <Key>
+      <PropertyRef Name="MaDB" />
+    </Key>
+    <Property Name="MaDB" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenDB" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SanNha" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="KETQUATHIDAU">
+    <Key>
+      <PropertyRef Name="MaKQ" />
+    </Key>
+    <Property Name="MaKQ" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="BTDoi1" Type="int" />
+    <Property Name="BTDoi2" Type="int" />
+    <Property Name="MaTD" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="LICHTHIDAU">
+    <Key>
+      <PropertyRef Name="MaTD" />
+    </Key>
+    <Property Name="MaTD" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="DoiChuNha" Type="varchar" MaxLength="10" />
+    <Property Name="DoiKhach" Type="varchar" MaxLength="10" />
+    <Property Name="NgayThiDau" Type="smalldatetime" />
+    <Property Name="SanThiDau" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaVD" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="LOAICAUTHU">
+    <Key>
+      <PropertyRef Name="MaLoaiCT" />
+    </Key>
+    <Property Name="MaLoaiCT" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenLoaiCT" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="VONGDAU">
+    <Key>
+      <PropertyRef Name="MaVD" />
+    </Key>
+    <Property Name="MaVD" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenVD" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__BANGXEPHAN__Diem__3E52440B">
+    <End Role="DOIBONG" Type="Self.DOIBONG" Multiplicity="0..1" />
+    <End Role="BANGXEPHANG" Type="Self.BANGXEPHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOIBONG">
+        <PropertyRef Name="MaDB" />
+      </Principal>
+      <Dependent Role="BANGXEPHANG">
+        <PropertyRef Name="MaDB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CAUTHU__MaDB__286302EC">
+    <End Role="LOAICAUTHU" Type="Self.LOAICAUTHU" Multiplicity="0..1" />
+    <End Role="CAUTHU" Type="Self.CAUTHU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAICAUTHU">
+        <PropertyRef Name="MaLoaiCT" />
+      </Principal>
+      <Dependent Role="CAUTHU">
+        <PropertyRef Name="MaLoaiCT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CAUTHU__MaDB__29572725">
+    <End Role="DOIBONG" Type="Self.DOIBONG" Multiplicity="0..1" />
+    <End Role="CAUTHU" Type="Self.CAUTHU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOIBONG">
+        <PropertyRef Name="MaDB" />
+      </Principal>
+      <Dependent Role="CAUTHU">
+        <PropertyRef Name="MaDB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CHITIETKET__MaDB__36B12243">
+    <End Role="DOIBONG" Type="Self.DOIBONG" Multiplicity="0..1" />
+    <End Role="CHITIETKETQUA" Type="Self.CHITIETKETQUA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOIBONG">
+        <PropertyRef Name="MaDB" />
+      </Principal>
+      <Dependent Role="CHITIETKETQUA">
+        <PropertyRef Name="MaDB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CHITIETKET__MaKQ__35BCFE0A">
+    <End Role="CAUTHU" Type="Self.CAUTHU" Multiplicity="0..1" />
+    <End Role="CHITIETKETQUA" Type="Self.CHITIETKETQUA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAUTHU">
+        <PropertyRef Name="MaCT" />
+      </Principal>
+      <Dependent Role="CHITIETKETQUA">
+        <PropertyRef Name="MaCT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CHITIETKET__MaKQ__37A5467C">
+    <End Role="KETQUATHIDAU" Type="Self.KETQUATHIDAU" Multiplicity="0..1" />
+    <End Role="CHITIETKETQUA" Type="Self.CHITIETKETQUA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KETQUATHIDAU">
+        <PropertyRef Name="MaKQ" />
+      </Principal>
+      <Dependent Role="CHITIETKETQUA">
+        <PropertyRef Name="MaKQ" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DANHSACHC__MaLoa__4316F928">
+    <End Role="LOAICAUTHU" Type="Self.LOAICAUTHU" Multiplicity="0..1" />
+    <End Role="DANHSACHCAUTHUGHIBAN" Type="Self.DANHSACHCAUTHUGHIBAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAICAUTHU">
+        <PropertyRef Name="MaLoaiCT" />
+      </Principal>
+      <Dependent Role="DANHSACHCAUTHUGHIBAN">
+        <PropertyRef Name="MaLoaiCT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DANHSACHCA__MaDB__4222D4EF">
+    <End Role="DOIBONG" Type="Self.DOIBONG" Multiplicity="0..1" />
+    <End Role="DANHSACHCAUTHUGHIBAN" Type="Self.DANHSACHCAUTHUGHIBAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOIBONG">
+        <PropertyRef Name="MaDB" />
+      </Principal>
+      <Dependent Role="DANHSACHCAUTHUGHIBAN">
+        <PropertyRef Name="MaDB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DANHSACHCA__SoBT__412EB0B6">
+    <End Role="CAUTHU" Type="Self.CAUTHU" Multiplicity="0..1" />
+    <End Role="DANHSACHCAUTHUGHIBAN" Type="Self.DANHSACHCAUTHUGHIBAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAUTHU">
+        <PropertyRef Name="MaCT" />
+      </Principal>
+      <Dependent Role="DANHSACHCAUTHUGHIBAN">
+        <PropertyRef Name="MaCT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__KETQUATHID__MaTD__32E0915F">
+    <End Role="LICHTHIDAU" Type="Self.LICHTHIDAU" Multiplicity="0..1" />
+    <End Role="KETQUATHIDAU" Type="Self.KETQUATHIDAU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LICHTHIDAU">
+        <PropertyRef Name="MaTD" />
+      </Principal>
+      <Dependent Role="KETQUATHIDAU">
+        <PropertyRef Name="MaTD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LICHTHIDA__DoiKh__2F10007B">
+    <End Role="DOIBONG" Type="Self.DOIBONG" Multiplicity="0..1" />
+    <End Role="LICHTHIDAU" Type="Self.LICHTHIDAU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOIBONG">
+        <PropertyRef Name="MaDB" />
+      </Principal>
+      <Dependent Role="LICHTHIDAU">
+        <PropertyRef Name="DoiKhach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LICHTHIDAU__MaVD__2E1BDC42">
+    <End Role="DOIBONG" Type="Self.DOIBONG" Multiplicity="0..1" />
+    <End Role="LICHTHIDAU" Type="Self.LICHTHIDAU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOIBONG">
+        <PropertyRef Name="MaDB" />
+      </Principal>
+      <Dependent Role="LICHTHIDAU">
+        <PropertyRef Name="DoiChuNha" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LICHTHIDAU__MaVD__300424B4">
+    <End Role="VONGDAU" Type="Self.VONGDAU" Multiplicity="0..1" />
+    <End Role="LICHTHIDAU" Type="Self.LICHTHIDAU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VONGDAU">
+        <PropertyRef Name="MaVD" />
+      </Principal>
+      <Dependent Role="LICHTHIDAU">
+        <PropertyRef Name="MaVD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLGVDBDQGModelStoreContainer">
+    <EntitySet Name="BANGXEPHANG" EntityType="Self.BANGXEPHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CAUTHU" EntityType="Self.CAUTHU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CHITIETKETQUA" EntityType="Self.CHITIETKETQUA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DANHSACHCAUTHUGHIBAN" EntityType="Self.DANHSACHCAUTHUGHIBAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DOIBONG" EntityType="Self.DOIBONG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KETQUATHIDAU" EntityType="Self.KETQUATHIDAU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LICHTHIDAU" EntityType="Self.LICHTHIDAU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOAICAUTHU" EntityType="Self.LOAICAUTHU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VONGDAU" EntityType="Self.VONGDAU" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__BANGXEPHAN__Diem__3E52440B" Association="Self.FK__BANGXEPHAN__Diem__3E52440B">
+      <End Role="DOIBONG" EntitySet="DOIBONG" />
+      <End Role="BANGXEPHANG" EntitySet="BANGXEPHANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CAUTHU__MaDB__286302EC" Association="Self.FK__CAUTHU__MaDB__286302EC">
+      <End Role="LOAICAUTHU" EntitySet="LOAICAUTHU" />
+      <End Role="CAUTHU" EntitySet="CAUTHU" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CAUTHU__MaDB__29572725" Association="Self.FK__CAUTHU__MaDB__29572725">
+      <End Role="DOIBONG" EntitySet="DOIBONG" />
+      <End Role="CAUTHU" EntitySet="CAUTHU" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CHITIETKET__MaDB__36B12243" Association="Self.FK__CHITIETKET__MaDB__36B12243">
+      <End Role="DOIBONG" EntitySet="DOIBONG" />
+      <End Role="CHITIETKETQUA" EntitySet="CHITIETKETQUA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CHITIETKET__MaKQ__35BCFE0A" Association="Self.FK__CHITIETKET__MaKQ__35BCFE0A">
+      <End Role="CAUTHU" EntitySet="CAUTHU" />
+      <End Role="CHITIETKETQUA" EntitySet="CHITIETKETQUA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CHITIETKET__MaKQ__37A5467C" Association="Self.FK__CHITIETKET__MaKQ__37A5467C">
+      <End Role="KETQUATHIDAU" EntitySet="KETQUATHIDAU" />
+      <End Role="CHITIETKETQUA" EntitySet="CHITIETKETQUA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DANHSACHC__MaLoa__4316F928" Association="Self.FK__DANHSACHC__MaLoa__4316F928">
+      <End Role="LOAICAUTHU" EntitySet="LOAICAUTHU" />
+      <End Role="DANHSACHCAUTHUGHIBAN" EntitySet="DANHSACHCAUTHUGHIBAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DANHSACHCA__MaDB__4222D4EF" Association="Self.FK__DANHSACHCA__MaDB__4222D4EF">
+      <End Role="DOIBONG" EntitySet="DOIBONG" />
+      <End Role="DANHSACHCAUTHUGHIBAN" EntitySet="DANHSACHCAUTHUGHIBAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DANHSACHCA__SoBT__412EB0B6" Association="Self.FK__DANHSACHCA__SoBT__412EB0B6">
+      <End Role="CAUTHU" EntitySet="CAUTHU" />
+      <End Role="DANHSACHCAUTHUGHIBAN" EntitySet="DANHSACHCAUTHUGHIBAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK__KETQUATHID__MaTD__32E0915F" Association="Self.FK__KETQUATHID__MaTD__32E0915F">
+      <End Role="LICHTHIDAU" EntitySet="LICHTHIDAU" />
+      <End Role="KETQUATHIDAU" EntitySet="KETQUATHIDAU" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LICHTHIDA__DoiKh__2F10007B" Association="Self.FK__LICHTHIDA__DoiKh__2F10007B">
+      <End Role="DOIBONG" EntitySet="DOIBONG" />
+      <End Role="LICHTHIDAU" EntitySet="LICHTHIDAU" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LICHTHIDAU__MaVD__2E1BDC42" Association="Self.FK__LICHTHIDAU__MaVD__2E1BDC42">
+      <End Role="DOIBONG" EntitySet="DOIBONG" />
+      <End Role="LICHTHIDAU" EntitySet="LICHTHIDAU" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LICHTHIDAU__MaVD__300424B4" Association="Self.FK__LICHTHIDAU__MaVD__300424B4">
+      <End Role="VONGDAU" EntitySet="VONGDAU" />
+      <End Role="LICHTHIDAU" EntitySet="LICHTHIDAU" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

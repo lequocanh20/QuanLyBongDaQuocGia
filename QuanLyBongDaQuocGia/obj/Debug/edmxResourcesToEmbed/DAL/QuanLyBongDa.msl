@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QLGVDBDQGModelStoreContainer" CdmEntityContainer="QLGVDBDQGEntities">
+    <EntitySetMapping Name="BANGXEPHANGs">
+      <EntityTypeMapping TypeName="QLGVDBDQGModel.BANGXEPHANG">
+        <MappingFragment StoreEntitySet="BANGXEPHANG">
+          <ScalarProperty Name="MaXH" ColumnName="MaXH" />
+          <ScalarProperty Name="MaDB" ColumnName="MaDB" />
+          <ScalarProperty Name="Thang" ColumnName="Thang" />
+          <ScalarProperty Name="Hoa" ColumnName="Hoa" />
+          <ScalarProperty Name="Thua" ColumnName="Thua" />
+          <ScalarProperty Name="HieuSo" ColumnName="HieuSo" />
+          <ScalarProperty Name="Diem" ColumnName="Diem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CAUTHUs">
+      <EntityTypeMapping TypeName="QLGVDBDQGModel.CAUTHU">
+        <MappingFragment StoreEntitySet="CAUTHU">
+          <ScalarProperty Name="MaCT" ColumnName="MaCT" />
+          <ScalarProperty Name="TenCT" ColumnName="TenCT" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="MaLoaiCT" ColumnName="MaLoaiCT" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+          <ScalarProperty Name="MaDB" ColumnName="MaDB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CHITIETKETQUAs">
+      <EntityTypeMapping TypeName="QLGVDBDQGModel.CHITIETKETQUA">
+        <MappingFragment StoreEntitySet="CHITIETKETQUA">
+          <ScalarProperty Name="MaCTKQ" ColumnName="MaCTKQ" />
+          <ScalarProperty Name="MaCT" ColumnName="MaCT" />
+          <ScalarProperty Name="MaDB" ColumnName="MaDB" />
+          <ScalarProperty Name="LoaiBT" ColumnName="LoaiBT" />
+          <ScalarProperty Name="ThoiDiem" ColumnName="ThoiDiem" />
+          <ScalarProperty Name="MaKQ" ColumnName="MaKQ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DANHSACHCAUTHUGHIBANs">
+      <EntityTypeMapping TypeName="QLGVDBDQGModel.DANHSACHCAUTHUGHIBAN">
+        <MappingFragment StoreEntitySet="DANHSACHCAUTHUGHIBAN">
+          <ScalarProperty Name="MaDSCTGB" ColumnName="MaDSCTGB" />
+          <ScalarProperty Name="MaCT" ColumnName="MaCT" />
+          <ScalarProperty Name="MaDB" ColumnName="MaDB" />
+          <ScalarProperty Name="MaLoaiCT" ColumnName="MaLoaiCT" />
+          <ScalarProperty Name="SoBT" ColumnName="SoBT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DOIBONGs">
+      <EntityTypeMapping TypeName="QLGVDBDQGModel.DOIBONG">
+        <MappingFragment StoreEntitySet="DOIBONG">
+          <ScalarProperty Name="MaDB" ColumnName="MaDB" />
+          <ScalarProperty Name="TenDB" ColumnName="TenDB" />
+          <ScalarProperty Name="SanNha" ColumnName="SanNha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KETQUATHIDAUs">
+      <EntityTypeMapping TypeName="QLGVDBDQGModel.KETQUATHIDAU">
+        <MappingFragment StoreEntitySet="KETQUATHIDAU">
+          <ScalarProperty Name="MaKQ" ColumnName="MaKQ" />
+          <ScalarProperty Name="BTDoi1" ColumnName="BTDoi1" />
+          <ScalarProperty Name="BTDoi2" ColumnName="BTDoi2" />
+          <ScalarProperty Name="MaTD" ColumnName="MaTD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LICHTHIDAUs">
+      <EntityTypeMapping TypeName="QLGVDBDQGModel.LICHTHIDAU">
+        <MappingFragment StoreEntitySet="LICHTHIDAU">
+          <ScalarProperty Name="MaTD" ColumnName="MaTD" />
+          <ScalarProperty Name="DoiChuNha" ColumnName="DoiChuNha" />
+          <ScalarProperty Name="DoiKhach" ColumnName="DoiKhach" />
+          <ScalarProperty Name="NgayThiDau" ColumnName="NgayThiDau" />
+          <ScalarProperty Name="SanThiDau" ColumnName="SanThiDau" />
+          <ScalarProperty Name="MaVD" ColumnName="MaVD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOAICAUTHUs">
+      <EntityTypeMapping TypeName="QLGVDBDQGModel.LOAICAUTHU">
+        <MappingFragment StoreEntitySet="LOAICAUTHU">
+          <ScalarProperty Name="MaLoaiCT" ColumnName="MaLoaiCT" />
+          <ScalarProperty Name="TenLoaiCT" ColumnName="TenLoaiCT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VONGDAUs">
+      <EntityTypeMapping TypeName="QLGVDBDQGModel.VONGDAU">
+        <MappingFragment StoreEntitySet="VONGDAU">
+          <ScalarProperty Name="MaVD" ColumnName="MaVD" />
+          <ScalarProperty Name="TenVD" ColumnName="TenVD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

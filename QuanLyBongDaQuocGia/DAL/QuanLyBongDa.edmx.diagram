@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9528d88b3ff4424f94038d53f92b75ba" Name="Diagram1">
+        <EntityTypeShape EntityType="QLGVDBDQGModel.BANGXEPHANG" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLGVDBDQGModel.CAUTHU" Width="1.5" PointX="6" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLGVDBDQGModel.CHITIETKETQUA" Width="1.5" PointX="8.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLGVDBDQGModel.DANHSACHCAUTHUGHIBAN" Width="1.5" PointX="8.25" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLGVDBDQGModel.DOIBONG" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLGVDBDQGModel.KETQUATHIDAU" Width="1.5" PointX="5.25" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLGVDBDQGModel.LICHTHIDAU" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLGVDBDQGModel.LOAICAUTHU" Width="1.5" PointX="3.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLGVDBDQGModel.VONGDAU" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
+        <AssociationConnector Association="QLGVDBDQGModel.FK__BANGXEPHAN__Diem__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="QLGVDBDQGModel.FK__CAUTHU__MaDB__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="QLGVDBDQGModel.FK__CAUTHU__MaDB__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="QLGVDBDQGModel.FK__CHITIETKET__MaKQ__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="QLGVDBDQGModel.FK__DANHSACHCA__SoBT__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="QLGVDBDQGModel.FK__CHITIETKET__MaDB__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="QLGVDBDQGModel.FK__CHITIETKET__MaKQ__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="QLGVDBDQGModel.FK__DANHSACHC__MaLoa__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="QLGVDBDQGModel.FK__DANHSACHCA__MaDB__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="QLGVDBDQGModel.FK__LICHTHIDA__DoiKh__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="QLGVDBDQGModel.FK__LICHTHIDAU__MaVD__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="QLGVDBDQGModel.FK__KETQUATHID__MaTD__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="QLGVDBDQGModel.FK__LICHTHIDAU__MaVD__300424B4" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
